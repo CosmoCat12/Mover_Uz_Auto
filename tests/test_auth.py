@@ -14,6 +14,18 @@ def test_mover_uz_auth_and_video(driver):
     auth_page.click_submit_btn()
     time.sleep(3)
 
+    # Негативная регестрация
+    # auth_page.click_login_btn()
+    # time.sleep(2)
+    # auth_page.enter_login_input("Cosmo_Cat")
+    # auth_page.enter_password_input("cosmocat1202271939")
+    # auth_page.click_submit_btn()
+    # time.sleep(3)
+
+
+    # смена темы работает не корректно, все селектора меняются
+    # wed_page.click_theme_btn()
+
     wed_page.enter_search_input("wednsday")
     wed_page.click_serch_btn()
     time.sleep(2)

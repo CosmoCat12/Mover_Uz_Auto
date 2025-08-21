@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 class WedPage:
     def __init__(self, driver):
         self.driver = driver
+        self.theme_btn = (By.CSS_SELECTOR, "#top-panel > div:nth-child(7) > a")
         self.search_input = (By.CSS_SELECTOR, "#header-search-form-val") # wednsday
         self.serch_btn = (By.CSS_SELECTOR, "#header-search-form > button")
         self.video_btn = (By.CSS_SELECTOR, "#app > div.grid-cell.grid-col-main > div:nth-child(3) > section > div.video-list > div:nth-child(1) > div.item-info > h5 > a")
@@ -14,6 +15,10 @@ class WedPage:
         self.better_qual_btn = (By.CSS_SELECTOR, "#player_settings > pjsdiv > pjsdiv:nth-child(5)")
         self.qual_back_btn = (By.CSS_SELECTOR, "#player_settings > pjsdiv > pjsdiv:nth-child(4)")
         self.play_btn = (By.CSS_SELECTOR, "#oframeplayer > pjsdiv:nth-child(3) > video")
+
+    def click_theme_btn(self):
+        wait = WebDriverWait(self.driver, 10)
+        wait.until(EC.element_to_be_clickable(self.theme_btn)).click()
 
     def enter_search_input(self, search_input):
         wait = WebDriverWait(self.driver, 10)
